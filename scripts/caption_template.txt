@@ -1,0 +1,88 @@
+# Caption Template Reference
+# Copy and adapt these templates for your own brand dataset.
+# Always lead with your trigger word.
+
+# ─────────────────────────────────────────────
+# FORMULA
+# ─────────────────────────────────────────────
+# [trigger], [subject], [background], [lighting], [material detail], [composition notes], product photography, minimalist
+
+# ─────────────────────────────────────────────
+# LAPTOP / NOTEBOOK
+# ─────────────────────────────────────────────
+
+# Hero (three-quarter, open)
+appleshot, laptop on white background, three quarter hero view open, soft studio lighting, aluminum unibody chassis, slim tapered profile, product photography, minimalist
+
+# Front view (open, screen visible)
+appleshot, laptop on white background, front view open, soft studio lighting, aluminum unibody chassis, notch display, slim tapered profile, product photography, minimalist
+
+# Side profile (closed)
+appleshot, laptop on white background, side profile view closed, soft studio lighting, extremely thin aluminum unibody, tapered wedge profile, product photography, minimalist
+
+# Top/overhead (closed, lid visible)
+appleshot, laptop on white background, top down overhead view closed, soft studio lighting, aluminum unibody lid, centered logo, product photography, minimalist
+
+# Color variant (substitute [COLOR] with actual color)
+appleshot, laptop on white background, three quarter hero view open, soft studio lighting, [COLOR] aluminum unibody, slim profile, product photography, minimalist
+
+# ─────────────────────────────────────────────
+# SMARTPHONE
+# ─────────────────────────────────────────────
+
+# Hero front/back
+appleshot, smartphone on white background, front and back hero view, soft studio lighting, aluminum frame and glass back, minimalist composition, product photography
+
+# Side profile
+appleshot, smartphone on white background, side profile view, soft studio lighting, extremely thin aluminum frame, minimalist composition, product photography
+
+# Flat lay
+appleshot, smartphone on white background, flat lay top view, soft overhead lighting, aluminum and glass materials, product photography, minimalist
+
+# ─────────────────────────────────────────────
+# TABLET
+# ─────────────────────────────────────────────
+
+# Solo device
+appleshot, tablet on white background, front view, soft studio lighting, aluminum frame and glass display, slim profile, product photography, minimalist
+
+# With keyboard/folio
+appleshot, tablet with keyboard folio, white background, soft studio lighting, aluminum and black fabric materials, portable workstation form factor, product photography, minimalist
+
+# ─────────────────────────────────────────────
+# DARK BACKGROUND VARIANT
+# ─────────────────────────────────────────────
+
+appleshot, laptop on deep black background, three quarter hero view open, edge rim lighting, aluminum unibody catching directional light, premium product photography, cinematic
+
+# ─────────────────────────────────────────────
+# MATERIAL VOCABULARY (use in captions)
+# ─────────────────────────────────────────────
+# aluminum unibody
+# anodized aluminum
+# titanium frame
+# glass back
+# ceramic back
+# matte finish
+# brushed metal
+# polished aluminum
+# space black aluminum
+# silver aluminum
+# soft studio lighting
+# diffused overhead lighting
+# directional rim lighting
+# dramatic edge lighting
+# hard light with soft shadow
+# overhead studio lighting
+
+# ─────────────────────────────────────────────
+# ANGLE VOCABULARY
+# ─────────────────────────────────────────────
+# three quarter hero view
+# front view open
+# side profile view
+# top down overhead view
+# flat lay
+# elevated front view
+# angled perspective view
+# rear view

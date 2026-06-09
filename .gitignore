@@ -1,0 +1,32 @@
+# Training images — do not commit copyrighted material
+datasets/
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# Model weights — too large for GitHub
+*.safetensors
+*.ckpt
+*.pt
+*.bin
+
+# Keep sample outputs
+!outputs/samples/*.png
+!outputs/samples/*.jpg
+
+# kohya_ss generated files
+config_lora-*.toml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/

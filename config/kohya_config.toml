@@ -1,0 +1,167 @@
+# kohya_config.toml
+# Annotated training configuration for SD1.5 LoRA on 8GB VRAM
+# Based on: kohya_ss v25.2.1, RTX 2080 Super (8GB), Ubuntu 24
+#
+# Replace all /home/YOUR_USER/ paths with your actual username.
+# Replace your_lora_name and your_brand with your actual names.
+
+[settings]
+use_shell = false
+
+[model]
+# IMPORTANT: Point to the .safetensors FILE, not the directory
+models_dir = "/home/YOUR_USER/kohya_data/models/base/v1-5-pruned-emaonly.safetensors"
+output_name = "your_lora_name"
+train_data_dir = "/home/YOUR_USER/kohya_data/datasets/your_brand"
+dataset_config = ""            # MUST be blank — ./test.toml causes silent failures
+training_comment = ""
+save_model_as = "safetensors"
+save_precision = "fp16"        # Use fp16, NOT bf16, for SD1.5
+
+[folders]
+output_dir = "/home/YOUR_USER/kohya_data/output/your_lora_name"
+reg_data_dir = ""              # MUST be blank — no regularisation images
+logging_dir = "/home/YOUR_USER/kohya_data/output/logs"
+
+[configuration]
+config_dir = "./presets"
+
+[accelerate_launch]
+dynamo_backend = "no"
+dynamo_mode = "default"
+dynamo_use_dynamic = false
+dynamo_use_fullgraph = false
+extra_accelerate_launch_args = ""
+gpu_ids = ""
+main_process_port = 0
+mixed_precision = "fp16"       # Required for 8GB VRAM
+multi_gpu = false
+num_cpu_threads_per_process = 2
+num_machines = 1
+num_processes = 1
+
+[basic]
+cache_latents = true           # Pre-encode images to save VRAM during training
+cache_latents_to_disk = true   # Keep cached latents off GPU memory
+caption_extension = ".txt"
+enable_bucket = true
+epoch = 3                      # 3 epochs × 39 images × 20 repeats = 2340 steps
+learning_rate = 0.0001         # UNet learning rate
+learning_rate_te = 0.00005     # Text encoder LR — keep lower to preserve understanding
+learning_rate_te1 = 0.00005
+learning_rate_te2 = 0.00005
+lr_scheduler = "cosine_with_restarts"
+lr_scheduler_args = ""
+lr_scheduler_type = ""
+lr_warmup = 5                  # 5% warmup (~100 steps at 2340 total)
+lr_scheduler_num_cycles = 1
+lr_scheduler_power = 1.0
+max_bucket_reso = 2048
+max_grad_norm = 1.0
+max_resolution = "512,512"     # SD1.5 native resolution
+max_train_steps = 0            # 0 = let epoch count control
+max_train_epochs = 0
+min_bucket_reso = 256
+optimizer = "AdamW8bit"        # Memory-efficient optimizer
+optimizer_args = ""
+save_every_n_epochs = 0        # 0 = don't save by epochs
+save_every_n_steps = 1         # Overridden in advanced section
+seed = 42
+stop_text_encoder_training = 0
+train_batch_size = 1           # Must be 1 for 8GB VRAM
+
+[advanced]
+adaptive_noise_scale = 0
+additional_parameters = ""
+bucket_no_upscale = true
+bucket_reso_steps = 64
+caption_dropout_every_n_epochs = 0
+caption_dropout_rate = 0
+color_aug = false
+clip_skip = 2                  # Important for SD1.5 aesthetic quality
+debiased_estimation_loss = false
+flip_aug = false
+fp8_base = false
+full_bf16 = false
+full_fp16 = false
+gradient_accumulation_steps = 1
+gradient_checkpointing = true  # Required for 8GB VRAM
+huber_c = 0.1
+huber_schedule = "snr"
+ip_noise_gamma = 0
+ip_noise_gamma_random_strength = false
+keep_tokens = 0
+log_tracker_config_dir = "./logs"
+log_tracker_name = ""
+loss_type = "l2"
+masked_loss = false
+max_data_loader_n_workers = 0
+max_timestep = 1000
+max_token_length = 150
+mem_eff_attn = false
+min_snr_gamma = 0
+min_timestep = 0
+multires_noise_iterations = 0
+multires_noise_discount = 0
+no_token_padding = false
+noise_offset = 0
+noise_offset_random_strength = false
+noise_offset_type = "Original"
+persistent_data_loader_workers = false
+prior_loss_weight = 1.0
+random_crop = false
+save_every_n_steps = 250       # Save checkpoint every 250 steps for evaluation
+save_last_n_steps = 0
+save_last_n_steps_state = 0
+save_state = false
+save_state_on_train_end = false
+scale_v_pred_loss_like_noise_pred = false
+shuffle_caption = false
+state_dir = ""                 # MUST be blank — ./outputs causes FileNotFoundError
+log_with = ""
+vae_batch_size = 0
+vae_dir = ""                   # MUST be blank — ./models/vae causes validation error
+v_pred_like_loss = 0
+wandb_api_key = ""
+wandb_run_name = ""
+weighted_captions = false
+xformers = "xformers"          # Significant VRAM savings — keep enabled
+
+[dataset_preparation]
+class_prompt = "class"
+images_folder = ""
+instance_prompt = "instance"
+reg_images_folder = ""
+reg_images_repeat = 1
+util_regularization_images_repeat_input = 1
+util_training_images_repeat_input = 40
+
+[huggingface]
+async_upload = false
+huggingface_path_in_repo = ""
+huggingface_repo_id = ""
+huggingface_repo_type = ""
+huggingface_repo_visibility = ""
+huggingface_token = ""
+resume_from_huggingface = ""
+save_state_to_huggingface = false
+
+[samples]
+sample_every_n_steps = 0
+sample_every_n_epochs = 0
+sample_prompts = ""
+sample_sampler = "euler_a"
+
+[sdxl]
+disable_mmap_load_safetensors = false
+fused_backward_pass = false
+fused_optimizer_groups = 0
+sdxl_cache_text_encoder_outputs = false
+sdxl_no_half_vae = true
+
+[metadata]
+metadata_title = ""
+metadata_author = ""
+metadata_description = ""
+metadata_license = ""
+metadata_tags = ""
