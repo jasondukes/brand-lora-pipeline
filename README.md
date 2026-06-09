@@ -6,7 +6,7 @@ A complete, reproducible pipeline for training Stable Diffusion LoRA models on b
 
 This repo documents an end-to-end workflow for fine-tuning a Stable Diffusion 1.5 model to learn and reproduce a specific brand's visual aesthetic using LoRA (Low-Rank Adaptation). The pipeline covers everything from dataset curation through training to inference evaluation.
 
-**Documented example:** Apple product photography style — studio lighting, aluminum materials, minimalist compositions.
+**Documented example:** Apple product photography style: studio lighting, aluminum materials, minimalist compositions.
 
 **Designed for:** Brand teams, creative technologists, and AI practitioners who want to generate on-brand visual assets without per-image prompting.
 
@@ -14,7 +14,7 @@ This repo documents an end-to-end workflow for fine-tuning a Stable Diffusion 1.
 
 ## Results
 
-Trained on 39 images, ~10 minutes on an RTX 2080 Super. Output below generated with the trigger word `appleshot` and a single prompt — no img2img, no inpainting.
+Trained on 39 images, ~10 minutes on an RTX 2080 Super. Output below generated with the trigger word `appleshot` and a single prompt: no img2img, no inpainting.
 
 ![Sample output](outputs/samples/apple_lora_epoch3_sample.png)
 
@@ -54,7 +54,7 @@ Raw Images → Dataset Prep → Captioning → Training → Checkpoint Eval → 
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/brand-lora-pipeline.git
+git clone https://github.com/jasondukes/brand-lora-pipeline.git
 cd brand-lora-pipeline
 
 # 2. Set up your dataset folder
