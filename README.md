@@ -1,6 +1,6 @@
 # Brand Style LoRA Training Pipeline
 
-A complete, reproducible pipeline for training Stable Diffusion LoRA models on brand visual identity — built and tested on consumer hardware with no cloud dependency.
+A complete, reproducible pipeline for training Stable Diffusion LoRA models on brand visual identity, built and tested on consumer hardware with no cloud dependency.
 
 ## What This Is
 
